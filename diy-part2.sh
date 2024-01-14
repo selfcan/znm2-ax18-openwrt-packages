@@ -16,8 +16,9 @@
 
 sed -i 's/192.168.1.1/10.10.10.10/g' package/base-files/files/bin/config_generate
 
+#修改golang版本---mosdns-v5需要新版golang
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 20.x feeds/packages/lang/golang
+svn export --force https://github.com/openwrt/packages/branches/master/lang/golang feeds/packages/lang/golang
 #添加luci-app-dockerman
 git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
 git clone https://github.com/lisaac/luci-lib-docker.git package/luci-lib-docker
